@@ -1,15 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Site | Certificate</title>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+
     <h1 id="title">My Site</h1>
     <p id="description">My bio</p>
     <form id="survey-form">
-        <input id="name" type="text">
+        <fieldset>
+            <label for="first-name" id="name-label">Enter Your First Name: <input id="name" name="name" type="text"
+                    required placeholder="Enter Name" /></label>
+            <label for="last-name" id="number-label">Enter Your Number: <input id="number" name="number" type="number"
+                    required min="1" max="20" placeholder="Enter number" /></label>
+            <label for="email" id="email-label">Enter Your Email: <input id="email" name="email" type="email" required
+                    placeholder="Enter Email" /></label>
+            <label for="new-password">Create a New Password: <input id="new-password" name="new-password"
+                    type="password" pattern="[a-z0-5]{8,}" required />
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Account type (required)</legend>
+            <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline"
+                    checked value="personal" /> Personal</label>
+            <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline"
+                    value="business" /> Business</label>
+        </fieldset>
+        <fieldset>
+            <label for="profile-picture">Upload a profile picture: <input id="profile-picture" type="file"
+                    name="file" /></label>
+            <label for="age">Input your age (years): <input id="age" type="number" name="age" min="13"
+                    max="120" /></label>
+            <label for="referrer">How did you hear about us?
+                <select id="dropdown" name="referrer">
+                    <option value="freeCodeCamp">freeCodeCamp</option>
+                    <option value="freeCode">freeCode</option>
+                    <option value="freeCamp">freeCamp</option>
+                    <option value="freeCCamp">freeCCamp</option>
+                </select>
+            </label>
+            <label for="bio">Provide a bio:
+                <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+            </label>
+        </fieldset>
+        <fieldset>
+            <label for="subscribe">
+                <input class="inline" id="subscribe" type="checkbox" required name="subscribe" value="yes" /> Subscribe
+                to our newsletter
+            </label>
+            <label for="agree-terms">
+                <input class="inline" id="agree-terms" type="checkbox" required name="agree-terms" value="yes" /> I
+                agree to the terms and conditions
+            </label>
+        </fieldset>
+        <input id="submit" type="submit" value="Submit" />
+
     </form>
+
 </body>
+
 </html>
